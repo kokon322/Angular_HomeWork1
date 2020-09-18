@@ -13,6 +13,7 @@ export class AppComponent {
   users : UserModel[] = [];
   constructor(private userRervice: UserService) {
     userRervice.getUsers().subscribe(jsonUsers => {
+
       for( let x in jsonUsers){
         this.users.push(jsonUsers[x]);
       }
@@ -20,9 +21,8 @@ export class AppComponent {
     });
 
     }
+
   delete(){
       this.users.length = 0;
     }
-
-
 }
